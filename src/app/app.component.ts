@@ -3,27 +3,25 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'AngularDemo';
-  serverElements: any= [];
-  newServerName ="";
-  newServerContent = "";
+  serverElements: any= [{type: 'server', name: 'testServer1', content:'content of test'}];
   
-  onAddServer(){
+  onServerAdded(serverData: {serverName: string, serverContenet: string}){
     this.serverElements.push({
-        type: 'server',
-        name: this.newServerName,
-        content: this.newServerContent
-   });
+      type: 'server',
+      name: serverData.serverName,
+      contenet: serverData.serverContenet
+    });
   }
 
-  onAddBluePrint(){
+  onBluePrintAdded(bluePrintData: {serverName: string, serverContenet: string}){
     this.serverElements.push({
       type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
-   });
+      name: bluePrintData.serverName,
+      contenet: bluePrintData.serverContenet
+    });
   }
 }
