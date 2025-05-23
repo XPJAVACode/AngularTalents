@@ -24,4 +24,12 @@ export class AppComponent {
       contenet: bluePrintData.serverContenet
     });
   }
+
+  destroyComponent(){
+    this.serverElements.splice(0, 1);
+  }
+
+  checkOnChanges(){
+    this.serverElements[0].name = "testServer1_Changed!";
+  }
 }
