@@ -10,7 +10,6 @@ export class CockpitComponent {
   @Output() blueprintCreated = new EventEmitter<{serverName: string, serverContenet: string}>();
   
   @ViewChild('serverContentInput') newServerContent: ElementRef | undefined
-  //{static:false}
   
   newServerName ="";
   //newServerContent = "";

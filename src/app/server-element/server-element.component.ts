@@ -15,8 +15,8 @@ AfterViewChecked,
 OnDestroy
 {
 
- @Input('serverElement') element: { type: string; name: string; content: string } | undefined;
-
+ @Input('serverElement') element!: { type: string; name: string; content: string };
+ @Input() name!: string;
   ngOnChanges(changes: SimpleChanges){
       console.log("on changes called");
       console.log(changes);

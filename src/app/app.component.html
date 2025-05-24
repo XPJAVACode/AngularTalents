@@ -7,15 +7,20 @@
     <div class="row">
         <div class="col-xs-12">
             <button class="btn btn-primary" (click)="destroyComponent()">Destroy Component</button>
+            &nbsp;
             <button class="btn btn-primary" (click)="checkOnChanges()">check OnChanges</button>
-                 <app-server-element *ngFor="let serverElement of serverElements"
-                 [serverElement] = "serverElement">
-                    <p>
-                        <strong *ngIf="element.type === 'server' " style="color:red">{{element.content}}</strong> 
-                        <strong *ngIf="element.type === 'blueprint'">{{element.content}}</strong> 
-                    </p>
-                 </app-server-element>
-            </div>
+            <app-server-element *ngFor="let serverElement of serverElements"
+            [serverElement]="serverElement"
+            [name]="serverElement.name">
+            <p>
+                <strong *ngIf="serverElement.type === 'server'" style="color:red">
+                    {{ serverElement.content }}
+                </strong> 
+                <strong *ngIf="serverElement.type === 'blueprint'">
+                    {{ serverElement.content }}
+                </strong> 
+            </p>
+        </app-server-element>
         </div>
     </div>
 </div>

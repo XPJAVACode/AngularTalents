@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'AngularDemo';
@@ -13,15 +13,16 @@ export class AppComponent {
     this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
-      contenet: serverData.serverContenet
+      content: serverData.serverContenet
     });
+    console.log(this.serverElements);
   }
 
   onBluePrintAdded(bluePrintData: {serverName: string, serverContenet: string}){
     this.serverElements.push({
       type: 'blueprint',
       name: bluePrintData.serverName,
-      contenet: bluePrintData.serverContenet
+      content: bluePrintData.serverContenet
     });
   }
 
